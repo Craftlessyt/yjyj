@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Bundle version="1.0" xsi:schemaLocation="" xmlns="https://emsfs.autodesk.com/schema/manifest/1/0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Identity>
+        <Publisher>Autodesk, Inc.</Publisher>
+        <DisplayName>Autodesk Maya 2022</DisplayName>
+        <PLC>MAYA</PLC>
+        <Release>2022</Release>
+        <BuildNumber envvar="BUILDNUMBER">2022.0.0.217</BuildNumber>
+        <UPI2>{9D725D29-4BE6-3ED9-A585-F4D5E20CECEE}</UPI2>
+        <UpgradeCode>{0D00CB4A-9AC9-3A90-A1CD-4BDB9AA39AD4}</UpgradeCode>
+        <ConstantId>{BB0D8F38-9727-47C0-B8D9-B9F95B42572E}</ConstantId>
+        <Signature>9pki889eLaeQO93AkRxXclsradW9MCJ5ouNUYRZqMu0=</Signature>
+        <Type>PRD</Type>
+    </Identity>
+    <Resources>
+        <LocalizedResources>SetupRes/locale/%setuplang%/setup.xml</LocalizedResources>
+        <Images>
+            <Image id="ProductIconImage">SetupRes/icons/Maya.svg</Image>
+            <Image id="ProductBrandImage">SetupRes/branding/Maya.png</Image>
+            <Image id="ProductLogoImage">SetupRes/icons/MayaLogo.png</Image>
+        </Images>
+        <ThemeColor>#00aaaa</ThemeColor>
+    </Resources>
+    <Configuration>
+        <Attributes launchAfterCore="false" majorUpgrade="true"/>
+        <AdditionalBundleInfo/>
+        <Platforms>
+            <Platform name="Windows" architecture="x64" minVersion="1"/>
+        </Platforms>
+        <Languages>
+            <Language langId="en-US"></Language>
+            <Language langId="ja-JP"></Language>
+            <Language langId="zh-CN"></Language>
+        </Languages>
+        <Properties>
+            <Property property="MAYA_INSTALL_PATH" defaultValue="%INSTALL_DEST%\Maya2022\">
+                <RegistrySearch id="SearchInstallLocation" key="SOFTWARE\Autodesk\Maya\2022\Setup\InstallPath" name="MAYA_INSTALL_LOCATION" root="HKLM"/>
+            </Property>
+        </Properties>
+        <Media>
+            <Disk diskLabel="Maya2022" diskPromptId="DiskPrompt" defaultDisk="true"></Disk>
+        </Media>
+    </Configuration>
+    <Applications>
+        <Application sequence="1" launchApp="true" installAs="core" name="Maya" external="false" path="manifest/app.maya.xml" upi2="{3D0A9832-FBCE-3759-B937-1323112D2D1B}" upgradeCode="{55F9E611-2F35-3329-B7DF-C08056F7D0EF}"/>
+        <Application sequence="2" installAs="optional" preSelected="true" name="MtoA" external="true" path="manifest/app.mtoa.xml" upi2="{E65A8341-C4A5-37C1-AD93-018CE57C8293}" upgradeCode="{2FC39202-2127-366D-B68B-475CD1816DDD}"/>
+        <Application sequence="3" installAs="optional" preSelected="true" name="Bifrost" external="true" path="manifest/app.bifrost.xml" upi2="{3C80DC81-2680-3F24-A2EC-65B0FB0BFA2A}" upgradeCode="{539D7ADA-C071-30F0-9077-7015119FD6A7}"/>
+        <Application sequence="3" installAs="optional" preSelected="true" name="MayaUSD" external="true" path="manifest/app.mayausd.xml" upi2="{CB06E8A4-9F08-38B4-AF22-103A17B9DBB1}" upgradeCode="{37354BE8-1392-3873-AE68-13B0704EE61C}"/>
+        <Application sequence="4" installAs="optional" preSelected="true" name="Substance" external="true" path="manifest/app.substance.xml" upi2="{E57DD0EA-988A-30DE-9160-04F53197E335}" upgradeCode="{8D907C8D-588F-3DDB-A970-7291624F05C7}"/>
+        <Application sequence="5" installAs="optional" preSelected="true" name="Rokoko" external="true" path="manifest/app.rokoko.xml" upi2="{8AF20DD4-E93A-3C98-B467-3B29EA2AB635}" upgradeCode="{842D4072-3BEA-3F6A-B2A9-1D2C9B0B122E}"/>
+        <Application sequence="6" installAs="optional" preSelected="true" name="Pymel" external="true" path="manifest/app.pymel.xml" upi2="{B593174C-26A4-32AB-8CC7-30C64542E1D3}" upgradeCode="{0B8DF919-AB87-3597-A9B9-9ACD044FDFDC}"/>
+    </Applications>
+</Bundle>
